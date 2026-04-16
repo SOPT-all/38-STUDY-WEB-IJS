@@ -1,0 +1,2 @@
+# 38-STUDY-WEB-IJS
+LET'S SOPT 38기 WEB 인터랙션 스터디
