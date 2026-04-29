@@ -1,0 +1,21 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@latest/dist/web/static/pretendard.css');
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    padding: 4rem;
+}
+
+article {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+button {
+    background-color: #2986cc;
+    border: none;
+    color: white;
+    width: 150px;
+    height: 40px;
+    font-size: large;
+
+}
