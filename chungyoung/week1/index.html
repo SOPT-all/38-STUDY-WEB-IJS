@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 1 | Mouse Event</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="main">
+      <h1>Mouse Event</h1>
+
+      <section class="options" aria-label="그리기 옵션">
+        <div class="tool-group" aria-label="도구 선택">
+          <button class="tool-button is-active js-tool" type="button" data-tool="brush" aria-pressed="true">브러시</button>
+          <button class="tool-button js-tool" type="button" data-tool="eraser" aria-pressed="false">지우개</button>
+        </div>
+
+        <label class="control">
+          <span>색상</span>
+          <input class="js-color-picker" type="color" />
+        </label>
+
+        <label class="control range-control">
+          <span>굵기</span>
+          <input class="js-pencil-range" type="range" min="1" max="50" />
+          <output class="js-pencil-value"></output>
+        </label>
+
+        <label class="control">
+          <span>선 끝</span>
+          <select class="line-cap-select js-line-cap">
+            <option value="round">round</option>
+            <option value="square">square</option>
+            <option value="butt">butt</option>
+          </select>
+        </label>
+      </section>
+
+      <canvas class="paint js-painter" width="1000" height="600"></canvas>
+
+      <button class="clear-button js-clear" type="button">모두 지우기</button>
+    </main>
+  </body>
+</html>
