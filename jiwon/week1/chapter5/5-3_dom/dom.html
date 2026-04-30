@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom test document</title>
+  <script src="./dom.js" defer></script>
+</head>
+
+<body>
+  <div id="test-innerhtml-textcontent">
+    <span style="display: none;">숨겨진 글자</span>
+    <span>안숨겨진 글자</span>
+  </div>
+
+  <div id="test-check-prev-next-sibling">
+    <div class="prev">prevSibling/prevElemSibling</div>
+    <div class="curr">current</div>
+    <div class="next">nextSibling/nextElemSibling</div>
+  </div>
+
+  <div id="test-check-first-last-child">
+    <div class="first">firstChild/firstElemChild</div>
+    <div class="middle">middle</div>
+    <div class="last">lastChild/lastElemChild</div>
+  </div>
+</body>
+
+</html>
