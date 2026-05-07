@@ -180,3 +180,56 @@ button {
   transform: translateX(-50%);
   transition: border-radius 0.3s;
 }
+
+.sunglasses {
+  opacity: 0;
+  transform: translateX(-0.5em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.8em;
+  left: 50%;
+  width: 5.2em;
+  margin-left: -2.6em;
+  z-index: 1;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+
+.sunglass {
+  position: relative;
+  width: 2.2em;
+  height: 1.3em;
+  border-radius: 0 0 1em 1em;
+  background: rgba(0, 0, 0, 1);
+}
+
+.sunglass::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -0.2em;
+  left: 0;
+  width: 100%;
+  height: 0.2em;
+  background: rgba(0, 0, 0, 1);
+}
+
+.close .sunglasses,
+.close_half .sunglasses {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.close .mouth {
+  border-radius: 20%;
+}
+
+.close_half .sunglasses .sunglass {
+  margin: 0.1em;
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 0 0 0.5em 0.5em;
+}
