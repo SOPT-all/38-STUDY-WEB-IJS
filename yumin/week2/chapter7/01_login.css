@@ -1,0 +1,182 @@
+@charset "utf-8";
+@import "./icons.css";
+
+:root {
+  --primary-color: #20a8e1;
+  --hover-color: #198ebf;
+  --background-color: #ffec99;
+  --text-color: #fff;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em;
+  background-color: var(--background-color);
+}
+
+.login {
+  position: relative;
+  width: 25em;
+  max-width: 100%;
+  padding: 2em;
+  background: white;
+  border-radius: 1em;
+}
+
+form label {
+  display: block;
+  position: relative;
+}
+form label .icn {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translate(0, -50%, 0);
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+form label .icn_eye {
+  cursor: pointer;
+}
+
+input {
+  display: block;
+  width: 340px;
+  margin: 0.75em 0;
+  padding: 0.75em 3em 0.75em 1em;
+  border: 1px solid #dedede;
+  border-radius: 0.5em;
+}
+
+input:focus + .icn {
+  opacity: 0.8;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+button {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.5em;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+@media (hover: hover) {
+  button:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+.character {
+  position: relative;
+  width: 7em;
+  height: 6em;
+  margin: 1.5em auto 3em;
+  background-color: currentColor;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0)),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 90%,
+      rgba(255, 255, 255, 0.3)
+    );
+  border-radius: 1.4em;
+  color: rgba(255, 217, 26, 1);
+}
+
+.character::before,
+.character::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: currentColor;
+}
+
+.character::before {
+  top: -1em;
+  width: 3em;
+  height: 1em;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0.3)
+    );
+  border-radius: 0.25em 0.25em 0 0;
+}
+
+.character::after {
+  bottom: -0.975em;
+  width: 4em;
+  height: 1em;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05)),
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0.3)
+    );
+  border-radius: 0 0 0.25em 0.25em;
+}
+
+.eye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.9em;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: currentColor;
+  border-radius: 50%;
+  color: var(--text-color);
+}
+
+.right {
+  left: 1.9em;
+}
+
+.left {
+  right: 1.9em;
+}
+
+.pupil {
+  display: block;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+.mouth {
+  position: absolute;
+  top: 2.7em;
+  left: 50%;
+  width: 2.6em;
+  height: 1.6em;
+  border: 0.3em solid transparent;
+  border-bottom-color: currentColor;
+  border-radius: 50%;
+  color: #000;
+  transform: translateX(-50%);
+  transition: border-radius 0.3s;
+}
