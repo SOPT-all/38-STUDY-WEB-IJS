@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_spinner_ui.html</title>
+    <link rel="stylesheet" href="./01_spinner_ui.css" />
+    <link rel="stylesheet" href="./03_skeleton_ui.css" />
+
+    <script src="./01_spinner_ui.js" defer></script>
+    <script src="./03_skeleton_ui.js" defer></script>
+  </head>
+
+  <body>
+    <ul class="card_list">
+      <li class="card hidden">
+        <a
+          href="https://www.clustar.cloud/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <img src="2.png" alt="CLUSTAR" />
+          <p class="card_desc">
+            <strong>CLUSTAR</strong>
+            <span>흩어진 메모를 빛나는 결과물로</span>
+          </p>
+        </a>
+      </li>
+
+      <li class="card hidden">
+        <a
+          href="https://i.pinimg.com/originals/56/64/c5/5664c57224a45bbc848b767a1d3c8c4c.jpg"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <img
+            src="https://s3.ap-northeast-2.amazonaws.com/sopt-makers-internal//prod/image/project/b29ba220-521b-471d-909c-23012be0e826-0.png"
+            alt="Shamrock Tales"
+          />
+          <p class="card_desc">
+            <strong>Shamrock Tales</strong>
+            <span>일상의 한 줄이, 아일랜드 설화가 되는 순간</span>
+          </p>
+        </a>
+      </li>
+    </ul>
+
+    <!-- spinner -->
+    <div class="spinner" style="display: none"></div>
+
+    <!-- Skeleton UI -->
+    <div class="card skeleton" style="display: none">
+      <div class="image"></div>
+      <div class="card_desc">
+        <strong class="title"></strong>
+        <span class="description"></span>
+      </div>
+    </div>
+  </body>
+</html>
