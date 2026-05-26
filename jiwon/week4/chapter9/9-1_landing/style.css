@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+@layer base, components, pages;
+
+@layer base {
+  :root {
+    --color-background: #eef6f4;
+    --color-highlight: #2d8f73;
+    --color-text: #17201c;
+    --color-link: #17201c;
+    --header-height: 4.25rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    color-scheme: light;
+  }
+
+  body {
+    overflow-x: hidden;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition:
+      background-color 0.45s ease,
+      color 0.45s ease;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@layer components {
+  a {
+    color: var(--color-link);
+    transition: color 0.3s ease-in-out;
+  }
+
+  a:focus,
+  a:hover,
+  a.active {
+    color: var(--color-highlight);
+  }
+
+  .header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    padding: 0 clamp(1rem, 4vw, 4rem);
+    backdrop-filter: blur(16px);
+  }
+
+  .logo {
+    font-weight: 800;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    font-size: 0.9rem;
+  }
+
+  .back_top {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 12;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--color-highlight);
+    color: #fff;
+    font-weight: 800;
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .back_top.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer pages {
+  .snap_page {
+    min-height: 100vh;
+  }
+
+  .panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+    align-items: center;
+    min-height: 100vh;
+    padding: calc(var(--header-height) + 1rem) clamp(1rem, 4vw, 4rem) 2rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .visual {
+    height: min(68vh, 42rem);
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 2rem 5rem color-mix(in srgb, var(--color-highlight) 18%, transparent);
+  }
+
+  .copy {
+    display: grid;
+    gap: 1rem;
+    max-width: 34rem;
+    margin-left: clamp(1rem, 4vw, 5rem);
+  }
+
+  .copy span {
+    color: var(--color-highlight);
+    font-weight: 900;
+  }
+
+  .copy h1,
+  .copy h2 {
+    font-size: clamp(2.4rem, 6vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+  }
+
+  .copy p {
+    color: color-mix(in srgb, var(--color-text) 72%, transparent);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.7;
+  }
+
+  .panel.is-visible .visual img {
+    transform: scale(1.03);
+  }
+
+  .visual img {
+    transition: transform 1.4s ease;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .copy {
+    animation: reveal both ease-out;
+    animation-timeline: view();
+    animation-range: entry 25% cover 45%;
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(2rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .copy {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+
+  .panel.is-visible .copy {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 820px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    height: 5.5rem;
+  }
+
+  :root {
+    --header-height: 5.5rem;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-content: center;
+  }
+
+  .visual {
+    height: 45vh;
+  }
+
+  .copy {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
