@@ -31,21 +31,22 @@ const projects = [
 
 const ProjectsSection = () => {
   return (
-    <div className="px-6 py-16 bg-gray-50 max-w-sm mx-auto lg:max-w-none lg:px-12 lg:py-20">
-      <p className="text-xl font-bold mb-8">프로젝트 경험</p>
+    <div className="px-6 py-16 max-w-sm mx-auto lg:max-w-none lg:px-0 lg:py-0">
+      <p className="text-xl font-bold mb-8 lg:hidden">프로젝트 경험</p>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 lg:gap-0">
         {projects.map(({ title, period, description, image }) => (
-          <div key={title} className="bg-white rounded-2xl overflow-hidden shadow-sm">
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-44 object-cover"
-            />
-            <div className="p-5">
-              <h3 className="text-sm font-semibold mb-1">{title}</h3>
-              <p className="text-xs text-indigo-400 mb-2">{period}</p>
-              <p className="text-xs text-gray-500 leading-relaxed whitespace-pre-line">
+          <div
+            key={title}
+            className="bg-white rounded-2xl overflow-hidden shadow-sm lg:h-screen lg:flex lg:flex-col lg:rounded-none lg:shadow-none lg:snap-start"
+          >
+            <div className="h-44 lg:flex-1 lg:h-0 overflow-hidden">
+              <img src={image} alt={title} className="w-full h-full object-cover" />
+            </div>
+            <div className="p-5 lg:p-10">
+              <p className="text-xs text-indigo-400 mb-1 lg:text-sm">{period}</p>
+              <h3 className="text-sm font-semibold lg:text-2xl lg:font-bold lg:mb-3">{title}</h3>
+              <p className="text-xs text-gray-500 leading-relaxed whitespace-pre-line lg:text-sm lg:mt-2">
                 {description}
               </p>
             </div>
