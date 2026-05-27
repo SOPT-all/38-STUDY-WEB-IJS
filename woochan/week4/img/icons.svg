@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+  <!-- 색(stroke/fill)은 의도적으로 비워둠: 사용처의 CSS가 상속으로 채움 (icon-color 변수 등) -->
+  <symbol id="icn_hamburger" viewBox="0 0 24 24">
+    <path
+      d="M4 17H20M4 12H20M4 7H20"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_zoom" viewBox="0 0 24 24">
+    <path
+      d="M20 20L15.8033 15.8033M18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C14.6421 18 18 14.6421 18 10.5Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_moon" viewBox="0 0 24 24">
+    <path
+      d="M4.67199 18.7967C3.97348 18.2328 4.55832 17.2239 5.45256 17.1452C11.2419 16.6357 15.0596 10.0755 12.4592 5.00063C12.0486 4.19926 12.5832 3.13003 13.4466 3.38559C17.2438 4.50955 20 7.94173 20 12C20 16.9715 16.1189 21 11 21C8.65964 21 6.38082 20.1762 4.67199 18.7967Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_sun" viewBox="0 0 24 24">
+    <path
+      d="M3 12H5M5.00006 19L7.00006 17M12 19V21M17 17L19 19M5 5L7 7M19 12H21M16.9999 7L18.9999 5M12 3V5M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_alarm" viewBox="0 0 24 24">
+    <path
+      d="M9 17V18C9 18.394 9.0776 18.7841 9.22836 19.1481C9.37913 19.512 9.6001 19.8427 9.87868 20.1213C10.1573 20.3999 10.488 20.6209 10.8519 20.7716C11.2159 20.9224 11.606 21 12 21C12.394 21 12.7841 20.9224 13.1481 20.7716C13.512 20.6209 13.8427 20.3999 14.1213 20.1213C14.3999 19.8427 14.6209 19.512 14.7716 19.1481C14.9224 18.7841 15 18.394 15 18V17M18 9C18 12 20 17 20 17H4C4 17 6 13 6 9C6 5.732 8.732 3 12 3C15.268 3 18 5.732 18 9Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_chat" viewBox="0 0 24 24">
+    <path
+      d="M8 9.5H15M8 13.5H13M15.3 19.1L21 21L19.1 15.3C19.1 15.3 20 14 20 11.5C20 6.80558 16.1944 3 11.5 3C6.80558 3 3 6.80558 3 11.5C3 16.1944 6.80558 20 11.5 20C14.0847 20 15.3 19.1 15.3 19.1Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_close" viewBox="0 0 24 24">
+    <path
+      d="M16 8L8 16M8.00001 8L16 16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_heart" viewBox="0 0 24 24">
+    <path
+      d="M4.3314 12.0474L12 20L19.6686 12.0474C20.5211 11.1633 21 9.96429 21 8.71405C21 6.11055 18.9648 4 16.4543 4C15.2487 4 14.0925 4.49666 13.24 5.38071L12 6.66667L10.76 5.38071C9.90749 4.49666 8.75128 4 7.54569 4C5.03517 4 3 6.11055 3 8.71405C3 9.96429 3.47892 11.1633 4.3314 12.0474Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_list" viewBox="0 0 24 24">
+    <path
+      d="M8 8H19M8 12H19M8 16H19M5 8V8.00999M5 12V12.01M5 16V16.01"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_thumbnail" viewBox="0 0 24 24">
+    <path
+      d="M6.75 3C3.88235 3 3 3.88235 3 6.75C3 9.61765 3.88235 10.5 6.75 10.5C9.61765 10.5 10.5 9.61765 10.5 6.75C10.5 3.88235 9.61765 3 6.75 3Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M6.75 13.5C3.88235 13.5 3 14.3824 3 17.25C3 20.1176 3.88235 21 6.75 21C9.61765 21 10.5 20.1176 10.5 17.25C10.5 14.3824 9.61765 13.5 6.75 13.5Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M17.25 13.5C14.3824 13.5 13.5 14.3824 13.5 17.25C13.5 20.1176 14.3824 21 17.25 21C20.1176 21 21 20.1176 21 17.25C21 14.3824 20.1176 13.5 17.25 13.5Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M17.25 3C14.3824 3 13.5 3.88235 13.5 6.75C13.5 9.61765 14.3824 10.5 17.25 10.5C20.1176 10.5 21 9.61765 21 6.75C21 3.88235 20.1176 3 17.25 3Z"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+
+  <symbol id="icn_more_vertical" viewBox="0 0 24 24">
+    <path
+      d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </symbol>
+</svg>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko-KR" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01_dashboard.html</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../etc/reset.css" />
+    <link rel="stylesheet" href="01_dashboard.css" />
+    <script type="module" src="01_dashboard.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- header -->
+      <header>
+        <div class="top_left">
+          <button
+            type="button"
+            class="svg_icon svg_hamburger hover js-notWorking"
+          >
+            <svg viewBox="0 0 24 24">
+              <title>모바일 메뉴</title>
+              <use href="../../img/icons.svg#icn_hamburger" />
+            </svg>
+          </button>
+          <h1>운동 다이어리</h1>
+        </div>
+        <div class="top_right">
+          <form action="./01_dashboard.html" method="get" class="search">
+            <label for="search">
+              <input
+                type="search"
+                id="search"
+                name="searchWords"
+                placeholder="검색어를 입력하세요."
+                autocomplete="off"
+                autofocus
+              />
+            </label>
+            <button class="svg_icon svg_zoom">
+              <svg viewBox="0 0 24 24">
+                <title>찾기</title>
+                <use href="../../img/icons.svg#icn_zoom" />
+              </svg>
+            </button>
+          </form>
+          <button type="button" class="svg_icon hover svg_theme js-theme">
+            <svg viewBox="0 0 24 24" class="svg_sun" data-theme="dark">
+              <title>라이트 테마로 변경</title>
+              <use href="../../img/icons.svg#icn_moon" />
+            </svg>
+            <svg viewBox="0 0 24 24" class="svg_moon" data-theme="light">
+              <title>다크 테마로 변경</title>
+              <use href="../../img/icons.svg#icn_sun" />
+            </svg>
+          </button>
+          <button type="button" class="svg_icon hover svg_alarm js-notWorking">
+            <svg viewBox="0 0 24 24">
+              <title>알람 리스트 보기</title>
+              <use href="../../img/icons.svg#icn_alarm" />
+            </svg>
+          </button>
+          <button type="button" class="profile js-notWorking">
+            <img src="../../img/img1.jpg" alt="" />
+            <span class="name">Noel</span>
+          </button>
+          <button
+            type="button"
+            class="svg_icon svg_bubble hover active js-openCommunity"
+          >
+            <svg viewBox="0 0 24 24">
+              <title>커뮤니티 창 열기</title>
+              <use href="../../img/icons.svg#icn_chat" />
+            </svg>
+          </button>
+        </div>
+      </header>
+      <!-- container -->
+      <section class="container">
+        <h2 class="sr-only">주요 내용</h2>
+        <div class="main_content">
+          <!-- community -->
+          <article class="article community js-community">
+            <h3>커뮤니티</h3>
+            <button type="button" class="svg_icon svg_close js-closeCommunity">
+              <svg viewBox="0 0 24 24">
+                <title>커뮤니티 창 닫기</title>
+                <use href="../../img/icons.svg#icn_close" />
+              </svg>
+            </button>
+            <ul class="board js-favorite"></ul>
+          </article>
+          <!-- exercises -->
+          <article class="article exercises js-viewType" data-type="list">
+            <div class="title">
+              <h3>운동 계획</h3>
+              <div class="date">D-20</div>
+            </div>
+            <div class="util">
+              <ol class="progress"></ol>
+              <div class="view_change js-viewChange">
+                <button
+                  type="button"
+                  class="svg_icon hover svg_list"
+                  data-type="list"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <title>리스트형으로 보기</title>
+                    <use href="../../img/icons.svg#icn_list" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="svg_icon hover svg_thumbnail"
+                  data-type="thumbnail"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <title>썸네일형으로 보기</title>
+                    <use href="../../img/icons.svg#icn_thumbnail" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- data-type 의해서 다른 뷰를 보여줌 -->
+            <ul class="view_container js-viewContainer"></ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- 리스트 렌더링 틀: data.js 데이터로 JS가 복제(clone)해 채운다 -->
+      <template id="tpl-summary">
+        <li class="list">
+          <em class="count"></em>
+          <span class="text"></span>
+        </li>
+      </template>
+
+      <template id="tpl-community">
+        <li class="list">
+          <span class="profile">
+            <img alt="" />
+          </span>
+          <div class="preview">
+            <div class="title">
+              <p class="name"></p>
+              <button type="button" class="svg_icon svg_favorite">
+                <svg viewBox="0 0 24 24">
+                  <title>좋아요</title>
+                  <use href="../../img/icons.svg#icn_heart" />
+                </svg>
+              </button>
+            </div>
+            <span class="text"></span>
+            <p class="date"></p>
+          </div>
+        </li>
+      </template>
+
+      <template id="tpl-workout">
+        <li class="list">
+          <div class="info">
+            <div class="top">
+              <span class="date"></span>
+              <button type="button" class="svg_icon svg_more js-notWorking">
+                <svg viewBox="0 0 24 24">
+                  <title>더 보기</title>
+                  <use href="../../img/icons.svg#icn_more_vertical" />
+                </svg>
+              </button>
+            </div>
+            <em class="title"></em>
+            <span class="sub_title"></span>
+          </div>
+          <div class="graph">
+            <progress value="0" max="100"></progress>
+            <span class="percent"></span>
+          </div>
+        </li>
+      </template>
+    </main>
+  </body>
+</html>
