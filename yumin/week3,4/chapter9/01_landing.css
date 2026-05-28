@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+@layer base, components;
+
+@layer base {
+  :root {
+    /* Font Families */
+    --font-family-Noto: "Noto Sans";
+    --font-family-Dancing: "Dancing Script";
+
+    /* Font Sizes */
+    --font-size: 1rem;
+    --font-size-big: 1.5rem;
+    --font-size-title: 2rem;
+
+    /* Line Heights */
+    --line-height: 1.4;
+
+    /* Color Palette */
+    --color-link: blue;
+    --color-link-hover: dodgerblue;
+    --color-black: #000000;
+  }
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  font-family: var(--font-family-Noto, sans-serif);
+  font-size: var(--font-size, 1rem);
+  line-height: var(--line-height, 1.4);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+
+@layer components {
+  a {
+    color: var(--color-link, blue);
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+
+    &:focus {
+      color: var(--color-link-hover, var(--color-link, blue));
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--color-link-hover, var(--color-link, blue));
+      }
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding: 0 3%;
+
+  & .header_contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  & .logo a {
+    font-family: var(--font-family-Dancing);
+    font-size: var(--font-size-big);
+    color: var(--color-black);
+  }
+
+  & .navigation ul {
+    display: flex;
+    gap: 1rem;
+
+    & li a {
+      color: var(--color-black);
+    }
+  }
+}
+
+main .section {
+  margin: 0 auto;
+  height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  view-timeline: --content;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  overflow: hidden;
+  animation: zoom-effect ease-in-out both;
+  animation-timeline: --content;
+
+  & .title {
+    flex-shrink: 0;
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    font-family: var(--font-family-Dancing);
+  }
+
+  & .text_wrap {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  & img {
+    display: block;
+    width: min(40vw, 420px);
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+}
+/* 줌 효과 애니메이션 정의 */
+@keyframes zoom-effect {
+  0% {
+    visibility: hidden;
+    filter: blur(2rem);
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    visibility: visible;
+    filter: blur(0);
+    transform: none;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    filter: blur(1rem);
+    transform: scale(2);
+    opacity: 0;
+  }
+}
