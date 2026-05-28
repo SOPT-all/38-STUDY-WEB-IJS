@@ -38,7 +38,7 @@ const ProjectsSection = () => {
         {projects.map(({ title, period, description, image }) => (
           <div
             key={title}
-            className="bg-white rounded-2xl overflow-hidden shadow-sm lg:h-screen lg:flex lg:flex-col lg:rounded-none lg:shadow-none lg:snap-start"
+            className="project-card bg-white rounded-2xl overflow-hidden shadow-sm lg:h-screen lg:flex lg:flex-col lg:rounded-none lg:shadow-none lg:snap-start"
           >
             <div className="h-44 lg:flex-1 lg:h-0 overflow-hidden">
               <img src={image} alt={title} className="w-full h-full object-cover" />
