@@ -1,0 +1,358 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #241a12;
+  background: #fff4d1;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --scroll-progress: 0;
+  --theme-bg: #fff4d1;
+  --theme-bg-2: #f0a847;
+  --theme-ink: #27180d;
+  --theme-accent: #fff0aa;
+}
+
+html {
+  min-width: 320px;
+  background: var(--theme-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100svh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--theme-bg);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.sweet-orbit {
+  min-height: 100svh;
+  color: var(--theme-ink);
+  background:
+    radial-gradient(circle at 72% 18%, color-mix(in srgb, var(--theme-accent) 66%, transparent), transparent 24rem),
+    linear-gradient(135deg, var(--theme-bg), var(--theme-bg-2));
+  transition:
+    background 420ms ease,
+    color 420ms ease;
+}
+
+.experience {
+  position: relative;
+  min-height: 500svh;
+}
+
+.scene-shell {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 100svh;
+  cursor: grab;
+}
+
+.scene-shell:active {
+  cursor: grabbing;
+}
+
+.scene-shell canvas {
+  display: block;
+}
+
+.copy-track {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.copy-panel {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(28px, 7vw, 88px);
+}
+
+.copy-card {
+  width: min(100%, 450px);
+  pointer-events: auto;
+}
+
+.eyebrow,
+.metric,
+.note,
+h1,
+h2 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.eyebrow {
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+  border: 1px solid color-mix(in srgb, var(--theme-ink) 42%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, white 28%, transparent);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+h1,
+h2 {
+  max-width: 12ch;
+  font-size: clamp(52px, 8vw, 132px);
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(42px, 6vw, 104px);
+}
+
+.note {
+  max-width: 36rem;
+  margin-top: 24px;
+  color: color-mix(in srgb, var(--theme-ink) 78%, transparent);
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.65;
+}
+
+.metric {
+  margin-top: 24px;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.final-panel {
+  align-items: flex-end;
+  padding-bottom: clamp(48px, 8vw, 104px);
+}
+
+.final-card {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.final-card .eyebrow {
+  margin-inline: auto;
+}
+
+.final-card h2 {
+  max-width: 14ch;
+  margin-inline: auto;
+}
+
+.final-card .note {
+  margin-inline: auto;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  margin-top: 28px;
+  padding: 0 18px;
+  border: 1px solid color-mix(in srgb, var(--theme-ink) 55%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-ink) 10%, white 28%);
+  color: var(--theme-ink);
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.flavor-rail {
+  position: fixed;
+  right: clamp(18px, 3vw, 38px);
+  bottom: clamp(18px, 3vw, 38px);
+  z-index: 4;
+  width: min(300px, calc(100vw - 36px));
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--theme-ink) 24%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, white 36%, transparent);
+  color: var(--theme-ink);
+  backdrop-filter: blur(18px);
+}
+
+.rail-current {
+  display: none;
+  margin: 0 0 10px;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.progress-track {
+  position: relative;
+  height: 3px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-ink) 18%, transparent);
+}
+
+.progress-fill {
+  display: block;
+  width: calc(var(--scroll-progress) * 100%);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--theme-ink);
+}
+
+.flavor-rail ol {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flavor-rail li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 22px;
+  opacity: 0.42;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.flavor-rail li.is-active {
+  opacity: 1;
+  transform: translateX(-2px);
+}
+
+.flavor-rail span {
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.flavor-rail strong {
+  min-width: 0;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: right;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .experience {
+    min-height: 500svh;
+  }
+
+  .copy-panel,
+  .copy-panel:nth-child(even) {
+    align-items: flex-start;
+    justify-content: center;
+    padding: 74px 20px 20px;
+  }
+
+  .copy-card {
+    width: min(100%, 360px);
+    text-align: center;
+  }
+
+  .eyebrow {
+    margin-inline: auto;
+    margin-bottom: 14px;
+  }
+
+  h1,
+  h2 {
+    max-width: 11ch;
+    margin-inline: auto;
+  }
+
+  .note {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .metric {
+    margin-top: 16px;
+  }
+
+  .final-panel {
+    align-items: flex-end;
+    padding-bottom: 112px;
+  }
+
+  .flavor-rail {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    width: auto;
+    padding: 12px;
+  }
+
+  .flavor-rail ol {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .rail-current {
+    display: block;
+  }
+
+  .flavor-rail li {
+    display: grid;
+    justify-items: center;
+    gap: 5px;
+    transform: none;
+  }
+
+  .flavor-rail li.is-active {
+    transform: translateY(-1px);
+  }
+
+  .flavor-rail strong {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

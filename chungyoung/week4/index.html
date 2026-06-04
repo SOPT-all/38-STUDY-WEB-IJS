@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 4 | Sticky Scroll Landing</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main>
+      <section
+        class="hero-section js-hero-section"
+        aria-labelledby="hero-title"
+        aria-describedby="hero-summary"
+      >
+        <div class="hero-sticky js-hero-sticky">
+          <h2 id="hero-title" class="sr-only">Plaid Labs Careers Scroll Story</h2>
+          <p id="hero-summary" class="sr-only">
+            We Design AI For Real-World Problems. We Build Solutions That Work In Real Life.
+            We Make a Real Impact.
+          </p>
+
+          <picture class="hero-background" aria-hidden="true">
+            <source srcset="./assets/head.webp" media="(min-width: 768px)" />
+            <img
+              src="./assets/head-mobile.webp"
+              alt=""
+              width="960"
+              height="1440"
+              fetchpriority="high"
+            />
+          </picture>
+
+          <div class="hero-overlay" aria-hidden="true"></div>
+
+          <div class="hero-scene scene-design" aria-hidden="true">
+            <img class="scene-icon" src="./assets/career1.webp" alt="" width="320" height="320" />
+            <div class="gradient-copy mobile-copy">
+              <span>We Design AI</span>
+              <span>For Real-World</span>
+              <span>Problems.</span>
+            </div>
+            <div class="gradient-copy desktop-copy">
+              <span>We Design AI</span>
+              <span>For Real-World Problems.</span>
+            </div>
+          </div>
+
+          <div class="hero-scene scene-build" aria-hidden="true">
+            <img class="scene-icon" src="./assets/career2.webp" alt="" width="320" height="320" />
+            <div class="gradient-copy mobile-copy">
+              <span>We Build</span>
+              <span>Solutions</span>
+              <span>That Work</span>
+              <span>In Real Life.</span>
+            </div>
+            <div class="gradient-copy desktop-copy">
+              <span>We Build Solutions</span>
+              <span>That Work In Real Life.</span>
+            </div>
+          </div>
+
+          <div class="hero-scene scene-impact" aria-hidden="true">
+            <div class="impact-copy mobile-copy">
+              <span>
+                <span>We Make a</span>
+                <strong>Real Impact.</strong>
+              </span>
+            </div>
+            <div class="impact-copy desktop-copy">
+              <span>We Make a </span>
+              <strong>Real Impact.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
