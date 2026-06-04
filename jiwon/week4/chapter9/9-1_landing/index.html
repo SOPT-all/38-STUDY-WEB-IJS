@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="계절별 새 관찰 루트를 소개하는 스크롤 전환형 랜딩 페이지입니다." />
+    <meta property="og:title" content="Landing Flyway" />
+    <meta property="og:description" content="스크롤 스냅과 테마 전환으로 구성한 인터랙티브 랜딩 페이지" />
+    <meta property="og:type" content="website" />
+    <title>Landing Flyway</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="../../../public/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#flower" class="logo">Landing Flyway</a>
+      <nav aria-label="섹션 메뉴">
+        <a href="#flower" data-theme-link="flower">Flower</a>
+        <a href="#material" data-theme-link="material">Material</a>
+        <a href="#heart" data-theme-link="heart">Heart</a>
+        <a href="#banana" data-theme-link="banana">Banana</a>
+        <a href="#orange" data-theme-link="orange">Orange</a>
+      </nav>
+    </header>
+
+    <main class="snap_page">
+      <section id="flower" class="panel" data-theme="flower">
+        <div class="visual">
+          <img src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?auto=format&fit=crop&w=1400&q=80" alt="꽃이 핀 들판 위를 나는 새" loading="eager" />
+        </div>
+        <div class="copy">
+          <span>01</span>
+          <h1>A flash of blue on the breeze.</h1>
+          <p>봄의 가벼운 공기 속에서 새의 움직임을 따라가며 첫 섹션의 색상과 강조값을 전환합니다.</p>
+        </div>
+      </section>
+
+      <section id="material" class="panel" data-theme="material">
+        <div class="visual">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80" alt="초록 언덕과 산책로 풍경" loading="lazy" />
+        </div>
+        <div class="copy">
+          <span>02</span>
+          <h2>Follow the quiet trail.</h2>
+          <p>scroll-snap-type으로 화면 단위 전환을 만들고, animation-timeline을 지원하는 환경에서는 텍스트가 스크롤에 맞춰 드러납니다.</p>
+        </div>
+      </section>
+
+      <section id="heart" class="panel" data-theme="heart">
+        <div class="visual">
+          <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=1400&q=80" alt="숲 사이로 들어오는 빛" loading="lazy" />
+        </div>
+        <div class="copy">
+          <span>03</span>
+          <h2>Hold the warm signal.</h2>
+          <p>IntersectionObserver가 현재 섹션을 감지하면 Proxy 상태 객체가 URL 해시와 테마 변수를 함께 갱신합니다.</p>
+        </div>
+      </section>
+
+      <section id="banana" class="panel" data-theme="banana">
+        <div class="visual">
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=80" alt="황금빛 들판과 구름" loading="lazy" />
+        </div>
+        <div class="copy">
+          <span>04</span>
+          <h2>Let the color lead.</h2>
+          <p>setProperty로 CSS 변수를 갱신하면 배경, 링크, 진행 표시 색상이 섹션에 맞게 부드럽게 바뀝니다.</p>
+        </div>
+      </section>
+
+      <section id="orange" class="panel" data-theme="orange">
+        <div class="visual">
+          <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1400&q=80" alt="노을빛 숲길" loading="lazy" />
+        </div>
+        <div class="copy">
+          <span>05</span>
+          <h2>Return without losing place.</h2>
+          <p>뒤로 가기와 해시 변경에도 현재 섹션 상태가 유지되도록 popstate와 hashchange 흐름을 함께 처리합니다.</p>
+        </div>
+      </section>
+    </main>
+
+    <button type="button" class="back_top js-back-top" aria-label="처음 섹션으로 이동">↑</button>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>운동 다이어리 대시보드</title>
+    <link rel="stylesheet" href="../../../public/reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside class="sidebar js-sidebar">
+        <div class="brand">
+          <span class="brand_mark">F</span>
+          <strong>Fitlog</strong>
+        </div>
+        <nav class="nav" aria-label="대시보드 메뉴">
+          <a href="#summary" class="active">요약</a>
+          <a href="#workouts">운동</a>
+          <a href="#progress">진행률</a>
+          <a href="#community">커뮤니티</a>
+        </nav>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <div class="top_left">
+            <button type="button" class="icon_button js-open-menu" aria-label="메뉴 열기">
+              <span></span>
+            </button>
+            <div>
+              <p>오늘의 루틴</p>
+              <h1>운동 다이어리</h1>
+            </div>
+          </div>
+          <div class="top_right">
+            <form class="search" action="./index.html">
+              <label for="search">운동 검색</label>
+              <input id="search" name="searchWords" type="search" placeholder="스쿼트, 러닝..." autocomplete="off" />
+            </form>
+            <button type="button" class="theme_button js-theme" aria-pressed="false">Dark</button>
+          </div>
+        </header>
+
+        <section id="summary" class="summary_grid" aria-label="요약">
+          <article class="hero_panel">
+            <p>이번 주 목표</p>
+            <h2>꾸준함을 쌓는 4회 운동</h2>
+            <div class="hero_progress">
+              <progress value="72" max="100"></progress>
+              <span>72%</span>
+            </div>
+          </article>
+          <article>
+            <span class="metric_label">총 운동</span>
+            <strong>12회</strong>
+            <small>지난주보다 +3</small>
+          </article>
+          <article>
+            <span class="metric_label">소모 칼로리</span>
+            <strong>4,820</strong>
+            <small>목표의 81%</small>
+          </article>
+          <article>
+            <span class="metric_label">연속 기록</span>
+            <strong>9일</strong>
+            <small>최고 기록까지 2일</small>
+          </article>
+        </section>
+
+        <section id="workouts" class="section_header">
+          <div>
+            <p>Workout list</p>
+            <h2>최근 운동</h2>
+          </div>
+          <div class="view_change" data-type="list">
+            <button type="button" class="js-view" data-view="list" aria-pressed="true">List</button>
+            <button type="button" class="js-view" data-view="thumbnail" aria-pressed="false">Card</button>
+          </div>
+        </section>
+
+        <ul class="workout_list js-view-container" data-type="list">
+          <li class="list" data-keyword="상체 근력 벤치프레스">
+            <div class="date">05.26</div>
+            <div>
+              <em class="title">상체 근력</em>
+              <span class="sub_title">벤치프레스 · 랫풀다운 · 푸시업</span>
+            </div>
+            <div class="graph">
+              <progress value="88" max="100"></progress>
+              <span class="percent">88%</span>
+            </div>
+          </li>
+          <li class="list" data-keyword="하체 밸런스 스쿼트 런지">
+            <div class="date">05.24</div>
+            <div>
+              <em class="title">하체 밸런스</em>
+              <span class="sub_title">스쿼트 · 런지 · 힙브릿지</span>
+            </div>
+            <div class="graph">
+              <progress value="64" max="100"></progress>
+              <span class="percent">64%</span>
+            </div>
+          </li>
+          <li class="list" data-keyword="유산소 러닝 인터벌">
+            <div class="date">05.22</div>
+            <div>
+              <em class="title">유산소 인터벌</em>
+              <span class="sub_title">러닝 · 사이클 · 코어</span>
+            </div>
+            <div class="graph">
+              <progress value="55" max="100"></progress>
+              <span class="percent">55%</span>
+            </div>
+          </li>
+          <li class="list" data-keyword="회복 스트레칭 요가">
+            <div class="date">05.21</div>
+            <div>
+              <em class="title">회복 스트레칭</em>
+              <span class="sub_title">요가 · 폼롤러 · 호흡</span>
+            </div>
+            <div class="graph">
+              <progress value="92" max="100"></progress>
+              <span class="percent">92%</span>
+            </div>
+          </li>
+        </ul>
+      </main>
+
+      <aside id="community" class="community js-community" aria-label="커뮤니티 패널">
+        <button type="button" class="icon_button close js-close-community" aria-label="커뮤니티 닫기"></button>
+        <h2>커뮤니티</h2>
+        <p>오늘 같은 루틴을 완료한 친구들</p>
+        <ul>
+          <li><span>MJ</span><strong>러닝 5km 완료</strong></li>
+          <li><span>HN</span><strong>하체 루틴 기록</strong></li>
+          <li><span>SO</span><strong>스트레칭 20분</strong></li>
+        </ul>
+      </aside>
+    </div>
+    <button type="button" class="floating js-open-community">커뮤니티</button>
+  </body>
+</html>
