@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', system-ui, sans-serif;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+canvas {
+  display: block;
+}

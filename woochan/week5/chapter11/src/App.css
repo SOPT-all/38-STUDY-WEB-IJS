@@ -1,0 +1,120 @@
+#wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem clamp(1.5rem, 6vw, 7rem);
+}
+
+.section__inner {
+  display: flex;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+.section__inner--left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.section__inner--center {
+  justify-content: center;
+  text-align: center;
+}
+
+.section__inner--right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.content {
+  max-width: 30rem;
+  color: #f2f8ff;
+}
+
+.section__inner--center .content {
+  max-width: 36rem;
+}
+
+.content__eyebrow {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #cfe8ff;
+}
+
+.content__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.content__desc {
+  margin: 0 0 2rem;
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  line-height: 1.7;
+  color: #e6f1fb;
+}
+
+.content__btn {
+  pointer-events: auto;
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1d3557;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.content__btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.hero {
+  max-width: 34rem;
+}
+
+.hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  line-height: 0.95;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 8px 30px rgba(20, 40, 80, 0.35);
+}
+
+.hero__desc {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 2rem 1.5rem;
+  }
+
+  .section__inner,
+  .section__inner--left,
+  .section__inner--right,
+  .section__inner--center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+}
